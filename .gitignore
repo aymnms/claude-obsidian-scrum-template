@@ -1,0 +1,11 @@
+# Obsidian - état local
+.obsidian/workspace*
+.obsidian/cache
+# Fichiers parasites OS
+._*
+.DS_Store
+Thumbs.db
+desktop.ini
+# Sauvegardes
+*.bak
+*.bak-*

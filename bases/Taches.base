@@ -1,0 +1,36 @@
+filters:
+  and:
+    - file.folder == "taches"
+    - file.name != "template-tache"
+views:
+  - type: kanban-view
+    name: Sprint actif
+    filters:
+      and:
+        - Sprint == "SPRINT_ACTIF"
+    groupBy:
+      property: Statut
+      direction: ASC
+    order:
+      - Projet
+      - Priorité
+      - Début
+      - Fin
+      - file.name
+    cardTitleProperty: note.Titre
+  - type: table
+    name: Backlog
+    filters:
+      and:
+        - Statut == "Backlog"
+    order:
+      - Priorité
+      - Projet
+      - file.name
+  - type: table
+    name: Toutes les tâches
+    order:
+      - Sprint
+      - Statut
+      - Priorité
+      - file.name

@@ -1,0 +1,22 @@
+filters:
+  and:
+    - file.folder == "projets"
+    - file.name != "template-projet"
+views:
+  - type: cards
+    name: En cours
+    filters:
+      and:
+        - Statut == "En cours"
+    order:
+      - file.name
+      - Statut
+      - Priorité
+      - Domaine
+  - type: cards
+    name: Tous les projets
+    order:
+      - file.name
+      - Statut
+      - Priorité
+      - Domaine
